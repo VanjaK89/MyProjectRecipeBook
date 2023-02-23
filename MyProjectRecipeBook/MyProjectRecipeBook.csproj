@@ -103,5 +103,14 @@
   <ItemGroup>
     <Resource Include="recipe2.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="deserts.jpg" />
+    <Resource Include="lasagne.jpg" />
+    <Resource Include="pizzasalami.jpg" />
+    <Resource Include="vegantaco.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="watch.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

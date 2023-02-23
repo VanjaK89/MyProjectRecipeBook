@@ -28,22 +28,117 @@
                         <MenuItem Header="Add Ingridients to your shopping list"></MenuItem>
                     </MenuItem>
                 </MenuItem>
+                <MenuItem Background="PeachPuff" >
+                    <MenuItem.Icon >
+                        <Image Source="watch.png"></Image>
+                    </MenuItem.Icon>
+                    <Expander Header="Preparation Time " Background="PeachPuff">
+                        <StackPanel >
+                            <Slider x:Name="Preparation" Minimum="10" Value="15" Maximum="30" SmallChange="1"/>
+                            <Label Content="{Binding ElementName=Preparation, Path=Value}"/>
+                        </StackPanel>
+                    </Expander>
+                </MenuItem>
             </Menu>
         </StackPanel>
 
         <UniformGrid>
-            <GroupBox Header="Vegetarian">
-                <Image></Image>
+            <GroupBox Header="Vegetarian" BorderBrush="RosyBrown" BorderThickness="3">
+                
+                <StackPanel Orientation="Vertical">
+                    
+                    <Button Content="Veggie Lasagne" BorderBrush="RosyBrown" Height="23" Margin="0,0,284.8,0" Background="MistyRose" >
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Image Source="lasagne.jpg" Height="98" RenderTransformOrigin="-0.651,1.168" Margin="215,0,80.8,0" Width="96">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <TextBox Background="Beige">Preparation Time: 30 min</TextBox>
+                </StackPanel>
+               
             </GroupBox>
-            <GroupBox Header="Vegan">
 
+            <GroupBox Header="Vegan" BorderBrush="RosyBrown" BorderThickness="3">
+                <StackPanel Orientation="Vertical">
+
+                    <Button Content="Vegan Tacos" BorderBrush="RosyBrown " Height="23" Margin="0,0,284.8,0" Background="MistyRose" >
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Image Source="vegantaco.jpg" Height="98" RenderTransformOrigin="-0.651,1.168" Margin="215,0,80.8,0" Width="96">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <TextBox Background="Beige">Preparation Time: 15 min</TextBox>
+                </StackPanel>
             </GroupBox>
-            <GroupBox Header="Everything">
+            <GroupBox Header="Everything" BorderBrush="RosyBrown" BorderThickness="3">
+                <StackPanel Orientation="Vertical">
 
+                    <Button Content="Pizza Salami" BorderBrush="RosyBrown" Height="23" Margin="0,0,284.8,0" Background="MistyRose" >
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Image Source="pizzasalami.jpg" Height="98" RenderTransformOrigin="-0.651,1.168" Margin="215,0,80.8,0" Width="96">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <TextBox Background="Beige">Preparation Time: 20min</TextBox>
+                </StackPanel>
             </GroupBox>
-            <GroupBox Header="Deserts">
+            <GroupBox Header="Deserts" BorderBrush="RosyBrown" BorderThickness="3">
+                <StackPanel Orientation="Vertical">
 
+                    <Button Content="Muffins" BorderBrush="RosyBrown" Height="23" Margin="0,0,284.8,0" Background="MistyRose" Click="Button_Click" >
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Image Source="deserts.jpg" Height="98" RenderTransformOrigin="-0.651,1.168" Margin="215,0,80.8,0" Width="96">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <TextBox Background="Beige">Preparation Time: 10min</TextBox>
+                </StackPanel>
             </GroupBox>
         </UniformGrid>
+        <StatusBar DockPanel.Dock="Bottom">Heute ist Donnerstag</StatusBar>
     </DockPanel>
 </Window>
