@@ -1,0 +1,49 @@
+﻿<Window x:Class="MyProjectRecipeBook.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyProjectRecipeBook"
+        mc:Ignorable="d"
+        Title="The Book of Recipes"  Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <DockPanel Background="Beige">
+        <StackPanel DockPanel.Dock="Top">
+            <Menu DockPanel.Dock="Left" Background="RosyBrown">
+                <MenuItem Header="Recipes" Background="PeachPuff">
+                    <MenuItem.Icon>
+                        <Image Source="recipe.png"></Image>
+                    </MenuItem.Icon>
+                    <MenuItem Header="Vegan" Background="PeachPuff"></MenuItem>
+                    <MenuItem Header="Vegetarian" Background="PeachPuff"></MenuItem>
+                    <MenuItem Header="Deserts" Background="PeachPuff"></MenuItem>
+                    <MenuItem Header="Everything" Background="PeachPuff"></MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Exit" Background="PeachPuff"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Shopping List" Background="PeachPuff">
+                    <MenuItem.Icon>
+                        <Image Source="cart.png"></Image>
+                    </MenuItem.Icon>
+                    <MenuItem Header="Add a new shopping list">
+                        <MenuItem Header="Add Ingridients to your shopping list"></MenuItem>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+
+        <UniformGrid>
+            <GroupBox Header="Vegetarian">
+                <Image></Image>
+            </GroupBox>
+            <GroupBox Header="Vegan">
+
+            </GroupBox>
+            <GroupBox Header="Everything">
+
+            </GroupBox>
+            <GroupBox Header="Deserts">
+
+            </GroupBox>
+        </UniformGrid>
+    </DockPanel>
+</Window>
