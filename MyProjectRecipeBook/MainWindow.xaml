@@ -34,8 +34,10 @@
                     </MenuItem.Icon>
                     <Expander Header="Preparation Time " Background="PeachPuff">
                         <StackPanel >
-                            <Slider x:Name="Preparation" Minimum="10" Value="15" Maximum="30" SmallChange="1"/>
-                            <Label Content="{Binding ElementName=Preparation, Path=Value}"/>
+                            <CheckBox Name="box1" Content="10" Checked="cbFeature_CheckedChanged" Unchecked="cbFeature_CheckedChanged"></CheckBox>
+                            <CheckBox Name="box2" Content="20" Checked="cbFeature_CheckedChanged" Unchecked="cbFeature_CheckedChanged"></CheckBox>
+                            <CheckBox Name="box3" Content="30" Checked="cbFeature_CheckedChanged" Unchecked="cbFeature_CheckedChanged"></CheckBox>
+                            <CheckBox Name="box4" Content="45" Checked="cbFeature_CheckedChanged" Unchecked="cbFeature_CheckedChanged"></CheckBox>
                         </StackPanel>
                     </Expander>
                 </MenuItem>
@@ -44,99 +46,138 @@
 
         <UniformGrid>
             <GroupBox Header="Vegetarian" BorderBrush="RosyBrown" BorderThickness="3">
-                
-                <StackPanel Orientation="Vertical">
-                    
-                    <Button Content="Veggie Lasagne" BorderBrush="RosyBrown" Height="23" Margin="0,0,284.8,0" Background="MistyRose" >
-                        <Button.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="10"></Setter>
-                            </Style>
-                        </Button.Resources>
-                    </Button>
-                    <Image Source="lasagne.jpg" Height="98" RenderTransformOrigin="-0.651,1.168" Margin="215,0,80.8,0" Width="96">
-                        <Image.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform ScaleX="-1"/>
-                                <SkewTransform/>
-                                <RotateTransform/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </Image.RenderTransform>
-                    </Image>
-                    <TextBox Background="Beige">Preparation Time: 30 min</TextBox>
-                </StackPanel>
-               
+                <Grid>
+                    <StackPanel Orientation="Vertical">
+
+                        <Button Content="Veggie Lasagne" BorderBrush="RosyBrown" Height="23" Margin="0,0,284.8,0" Background="MistyRose" >
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="10"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Image Source="lasagne.jpg" Height="98" RenderTransformOrigin="-0.651,1.168" Margin="215,0,80.8,0" Width="96">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                        <TextBox Background="Beige" Width="150" HorizontalAlignment="Left">Preparation Time: 30 min</TextBox>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Right" >
+                        <TextBox Background="Beige">Ingridients:</TextBox>
+                        <RadioButton>Tomato juice</RadioButton>
+                        <RadioButton>Zuchinni</RadioButton>
+                        <RadioButton>Cheese</RadioButton>
+                        <RadioButton>Potatoes</RadioButton>
+                    </StackPanel>
+                </Grid>
+
             </GroupBox>
 
             <GroupBox Header="Vegan" BorderBrush="RosyBrown" BorderThickness="3">
-                <StackPanel Orientation="Vertical">
+                <Grid>
+                    <StackPanel HorizontalAlignment="Left">
 
-                    <Button Content="Vegan Tacos" BorderBrush="RosyBrown " Height="23" Margin="0,0,284.8,0" Background="MistyRose" >
-                        <Button.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="10"></Setter>
-                            </Style>
-                        </Button.Resources>
-                    </Button>
-                    <Image Source="vegantaco.jpg" Height="98" RenderTransformOrigin="-0.651,1.168" Margin="215,0,80.8,0" Width="96">
-                        <Image.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform ScaleX="-1"/>
-                                <SkewTransform/>
-                                <RotateTransform/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </Image.RenderTransform>
-                    </Image>
-                    <TextBox Background="Beige">Preparation Time: 15 min</TextBox>
-                </StackPanel>
+                        <Button Content="Vegan Tacos" BorderBrush="RosyBrown " Height="23" Margin="0,0,284.8,0" Background="MistyRose" >
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="10"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Image Source="vegantaco.jpg" Height="98" RenderTransformOrigin="-0.651,1.168" Margin="215,0,80.8,0" Width="96">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                        <TextBox Background="Beige" Width="150" HorizontalAlignment="Left">Preparation Time: 15 min</TextBox>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Right" >
+                        <TextBox Background="Beige">Ingridients:</TextBox>
+                        <RadioButton>Tomato juice</RadioButton>
+                        <RadioButton>Corn</RadioButton>
+                        <RadioButton>Tortilla</RadioButton>
+                        <RadioButton>Soya nuggets</RadioButton>
+                    </StackPanel>
+                </Grid>
+
             </GroupBox>
             <GroupBox Header="Everything" BorderBrush="RosyBrown" BorderThickness="3">
-                <StackPanel Orientation="Vertical">
+                <Grid>
+                    <StackPanel Orientation="Vertical">
 
-                    <Button Content="Pizza Salami" BorderBrush="RosyBrown" Height="23" Margin="0,0,284.8,0" Background="MistyRose" >
-                        <Button.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="10"></Setter>
-                            </Style>
-                        </Button.Resources>
-                    </Button>
-                    <Image Source="pizzasalami.jpg" Height="98" RenderTransformOrigin="-0.651,1.168" Margin="215,0,80.8,0" Width="96">
-                        <Image.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform ScaleX="-1"/>
-                                <SkewTransform/>
-                                <RotateTransform/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </Image.RenderTransform>
-                    </Image>
-                    <TextBox Background="Beige">Preparation Time: 20min</TextBox>
-                </StackPanel>
+                        <Button Content="Pizza Salami" BorderBrush="RosyBrown" Height="23" Margin="0,0,284.8,0" Background="MistyRose" >
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="10"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Image Source="pizzasalami.jpg" Height="98" RenderTransformOrigin="-0.651,1.168" Margin="215,0,80.8,0" Width="96">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                        <Button Background="Beige" Width="150" HorizontalAlignment="Left">Preparation Time: 20min</Button>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Right" >
+                        <TextBox Background="Beige">Ingridients:</TextBox>
+                        <RadioButton>Tomato juice</RadioButton>
+                        <RadioButton>Pizza dough</RadioButton>
+                        <RadioButton>Salami</RadioButton>
+                        <RadioButton>Cheese</RadioButton>
+                    </StackPanel>
+                </Grid>
+            
             </GroupBox>
             <GroupBox Header="Deserts" BorderBrush="RosyBrown" BorderThickness="3">
-                <StackPanel Orientation="Vertical">
+                <Grid>
+                    <StackPanel Orientation="Vertical">
+                    
+                        <Button Content="Muffins" BorderBrush="RosyBrown" Height="23" Margin="0,0,284.8,0" Background="MistyRose" Click="Button_Click" >
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="10"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Image Source="deserts.jpg" Height="98" RenderTransformOrigin="-0.651,1.168" Margin="215,0,80.8,0" Width="96">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                        <TextBox Background="Beige" Width="150" HorizontalAlignment="Left">Preparation Time: 10min</TextBox>
 
-                    <Button Content="Muffins" BorderBrush="RosyBrown" Height="23" Margin="0,0,284.8,0" Background="MistyRose" Click="Button_Click" >
-                        <Button.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="10"></Setter>
-                            </Style>
-                        </Button.Resources>
-                    </Button>
-                    <Image Source="deserts.jpg" Height="98" RenderTransformOrigin="-0.651,1.168" Margin="215,0,80.8,0" Width="96">
-                        <Image.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform ScaleX="-1"/>
-                                <SkewTransform/>
-                                <RotateTransform/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </Image.RenderTransform>
-                    </Image>
-                    <TextBox Background="Beige">Preparation Time: 10min</TextBox>
-                </StackPanel>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Right" >
+                        <TextBox Background="Beige">Ingridients:</TextBox>
+                        <RadioButton>Muffin mix</RadioButton>
+                        <RadioButton>Eggs</RadioButton>
+                        <RadioButton>Milk</RadioButton>
+                        <RadioButton>Butter</RadioButton>
+                    </StackPanel>
+
+                </Grid>
             </GroupBox>
         </UniformGrid>
         <StatusBar DockPanel.Dock="Bottom">Heute ist Donnerstag</StatusBar>

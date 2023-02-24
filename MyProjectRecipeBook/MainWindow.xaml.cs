@@ -23,6 +23,9 @@ namespace MyProjectRecipeBook
         public MainWindow()
         {
             InitializeComponent();
+            var ctx = new MyDataContext();
+                
+            this.DataContext = ctx;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
