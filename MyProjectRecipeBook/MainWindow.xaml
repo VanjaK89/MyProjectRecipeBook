@@ -13,19 +13,38 @@
                     <MenuItem.Icon>
                         <Image Source="recipe.png"></Image>
                     </MenuItem.Icon>
-                    <MenuItem Header="Vegan" Background="PeachPuff"></MenuItem>
-                    <MenuItem Header="Vegetarian" Background="PeachPuff"></MenuItem>
-                    <MenuItem Header="Deserts" Background="PeachPuff"></MenuItem>
-                    <MenuItem Header="Everything" Background="PeachPuff"></MenuItem>
+                    <MenuItem Header="Vegan" Background="PeachPuff" Click="MenuItem_Vegan_Click"></MenuItem>
+                    <MenuItem Header="Vegetarian" Background="PeachPuff" Click="MenuItem_Veggeterian_Click"></MenuItem>
+                    <MenuItem Header="Deserts" Background="PeachPuff" Click="MenuItem_Deserts_Click"></MenuItem>
+                    <MenuItem Header="Everything" Background="PeachPuff" Click="MenuItem_Everything_Click"></MenuItem>
                     <Separator/>
-                    <MenuItem Header="Exit" Background="PeachPuff"></MenuItem>
+                    <MenuItem Header="Exit" Background="PeachPuff" Click="MenuItem_Return_Click"></MenuItem>
                 </MenuItem>
                 <MenuItem Header="Shopping List" Background="PeachPuff">
                     <MenuItem.Icon>
                         <Image Source="cart.png"></Image>
                     </MenuItem.Icon>
                     <MenuItem Header="Add a new shopping list">
-                        <MenuItem Header="Add Ingridients to your shopping list"></MenuItem>
+                       
+                        <ListBox ItemsSource="{Binding IngridientsList}"
+                                SelectedItem="{Binding AusgewaehltesIngridient}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBox Text="{Binding Bezeichnung}"/>
+                                        <TextBox Text="{Binding Amount}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        <StackPanel>
+                            <UniformGrid Columns="3" Rows="1">
+                                <TextBox Text="{Binding NeuesIngridient.Bezeichnung}"/>
+                                <TextBox Text="{Binding NeuesIngridient.Amount}"/>
+
+                                <Button Click="Button_Click_Add">Add Ingridients</Button>
+                            </UniformGrid>
+                        </StackPanel>
                     </MenuItem>
                 </MenuItem>
                 <MenuItem Background="PeachPuff" >
@@ -34,10 +53,10 @@
                     </MenuItem.Icon>
                     <Expander Header="Preparation Time " Background="PeachPuff">
                         <StackPanel >
-                            <CheckBox Name="box1" Content="10" Checked="cbFeature_CheckedChanged" Unchecked="cbFeature_CheckedChanged"></CheckBox>
-                            <CheckBox Name="box2" Content="20" Checked="cbFeature_CheckedChanged" Unchecked="cbFeature_CheckedChanged"></CheckBox>
-                            <CheckBox Name="box3" Content="30" Checked="cbFeature_CheckedChanged" Unchecked="cbFeature_CheckedChanged"></CheckBox>
-                            <CheckBox Name="box4" Content="45" Checked="cbFeature_CheckedChanged" Unchecked="cbFeature_CheckedChanged"></CheckBox>
+                            <CheckBox Name="box1" Content="10" Checked="CheckBoxChecked"></CheckBox>
+                            <CheckBox Name="box2" Content="20" ></CheckBox>
+                            <CheckBox Name="box3" Content="30" ></CheckBox>
+                            <CheckBox Name="box4" Content="45" ></CheckBox>
                         </StackPanel>
                     </Expander>
                 </MenuItem>
@@ -45,11 +64,11 @@
         </StackPanel>
 
         <UniformGrid>
-            <GroupBox Header="Vegetarian" BorderBrush="RosyBrown" BorderThickness="3">
+            <GroupBox x:Name="mainBox" Header="Vegetarian" BorderBrush="RosyBrown" BorderThickness="3" >
                 <Grid>
                     <StackPanel Orientation="Vertical">
 
-                        <Button Content="Veggie Lasagne" BorderBrush="RosyBrown" Height="23" Margin="0,0,284.8,0" Background="MistyRose" >
+                        <Button x:Name="backgroundButton"  Content="Veggie Lasagne" BorderBrush="RosyBrown" Height="23" Margin="0,0,284.8,0" Background="MistyRose" >
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="10"></Setter>
@@ -74,16 +93,24 @@
                         <RadioButton>Zuchinni</RadioButton>
                         <RadioButton>Cheese</RadioButton>
                         <RadioButton>Potatoes</RadioButton>
+
+                        <Button x:Name="button" Content="Start Cooking" Click="startCooking" Background="RosyBrown">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="10"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
                     </StackPanel>
                 </Grid>
 
             </GroupBox>
 
-            <GroupBox Header="Vegan" BorderBrush="RosyBrown" BorderThickness="3">
+            <GroupBox x:Name="mainBox1" Header="Vegan" BorderBrush="RosyBrown" BorderThickness="3">
                 <Grid>
                     <StackPanel HorizontalAlignment="Left">
 
-                        <Button Content="Vegan Tacos" BorderBrush="RosyBrown " Height="23" Margin="0,0,284.8,0" Background="MistyRose" >
+                        <Button x:Name="backgroundButton1"  Content="Vegan Tacos" BorderBrush="RosyBrown " Height="23" Margin="0,0,284.8,0" Background="MistyRose" >
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="10"></Setter>
@@ -100,7 +127,7 @@
                                 </TransformGroup>
                             </Image.RenderTransform>
                         </Image>
-                        <TextBox Background="Beige" Width="150" HorizontalAlignment="Left">Preparation Time: 15 min</TextBox>
+                        <TextBox  Background="Beige" Width="150" HorizontalAlignment="Left">Preparation Time: 15 min</TextBox>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Right" >
                         <TextBox Background="Beige">Ingridients:</TextBox>
@@ -108,15 +135,22 @@
                         <RadioButton>Corn</RadioButton>
                         <RadioButton>Tortilla</RadioButton>
                         <RadioButton>Soya nuggets</RadioButton>
+                        <Button x:Name="button1" Content="Start Cooking" Click="startCooking1" Background="RosyBrown">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="10"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
                     </StackPanel>
                 </Grid>
 
             </GroupBox>
-            <GroupBox Header="Everything" BorderBrush="RosyBrown" BorderThickness="3">
+            <GroupBox x:Name="mainBox2" Header="Everything" BorderBrush="RosyBrown" BorderThickness="3">
                 <Grid>
                     <StackPanel Orientation="Vertical">
 
-                        <Button Content="Pizza Salami" BorderBrush="RosyBrown" Height="23" Margin="0,0,284.8,0" Background="MistyRose" >
+                        <Button x:Name="backgroundButton2"  Content="Pizza Salami" BorderBrush="RosyBrown" Height="23" Margin="0,0,284.8,0" Background="MistyRose" >
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="10"></Setter>
@@ -141,15 +175,22 @@
                         <RadioButton>Pizza dough</RadioButton>
                         <RadioButton>Salami</RadioButton>
                         <RadioButton>Cheese</RadioButton>
+                        <Button x:Name="button2" Content="Start Cooking" Click="startCooking2" Background="RosyBrown">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="10"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
                     </StackPanel>
                 </Grid>
             
             </GroupBox>
-            <GroupBox Header="Deserts" BorderBrush="RosyBrown" BorderThickness="3">
+            <GroupBox x:Name="mainBox3" Header="Deserts" BorderBrush="RosyBrown" BorderThickness="3">
                 <Grid>
                     <StackPanel Orientation="Vertical">
-                    
-                        <Button Content="Muffins" BorderBrush="RosyBrown" Height="23" Margin="0,0,284.8,0" Background="MistyRose" Click="Button_Click" >
+
+                        <Button x:Name="backgroundButton3"  Content="Muffins" BorderBrush="RosyBrown" Height="23" Margin="0,0,284.8,0" Background="MistyRose"  >
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="10"></Setter>
@@ -166,7 +207,7 @@
                                 </TransformGroup>
                             </Image.RenderTransform>
                         </Image>
-                        <TextBox Background="Beige" Width="150" HorizontalAlignment="Left">Preparation Time: 10min</TextBox>
+                        <TextBox x:Name="onefive" Background="Beige" Width="150" HorizontalAlignment="Left">Preparation Time: 10min</TextBox>
 
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Right" >
@@ -175,6 +216,13 @@
                         <RadioButton>Eggs</RadioButton>
                         <RadioButton>Milk</RadioButton>
                         <RadioButton>Butter</RadioButton>
+                        <Button x:Name="button3" Content="Start Cooking" Click="startCooking3" Background="RosyBrown">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="10"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
                     </StackPanel>
 
                 </Grid>

@@ -1,0 +1,26 @@
+﻿<Window x:Class="MyProjectRecipeBook.VeggieWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyProjectRecipeBook"
+        mc:Ignorable="d"
+        Title="VeggieWindow" Height="450" Width="800">
+    <DockPanel>
+        <Menu HorizontalAlignment="Center">
+
+        </Menu>
+        <StackPanel Background="Beige">
+            <Image Source="veggierecipe.png" Height="368" Width="424" ></Image>
+            <Button Click="Button_Click" Content="Go back to main menu"  Height="32" Width="152" Background="RosyBrown">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"></Setter>
+                    </Style>
+                </Button.Resources>
+
+            </Button>
+        </StackPanel>
+
+    </DockPanel>
+</Window>
