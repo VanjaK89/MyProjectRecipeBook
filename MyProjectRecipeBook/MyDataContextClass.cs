@@ -18,5 +18,13 @@ namespace MyProjectRecipeBook
         }
 
         public ObservableCollection<string> Farben { get; set; }
+
+        private string _Farbe1;
+        public string Farbe1 {
+            get { return _Farbe1; }
+            set { _Farbe1 = value; }
+
+            }
+        public ObservableCollection<string> FarbenListe { get; set; }
     }
 }

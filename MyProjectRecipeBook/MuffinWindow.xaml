@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:MyProjectRecipeBook"
         mc:Ignorable="d"
         Title="MuffinWindow" Height="450" Width="800">
-  
+
     <DockPanel>
 
-        <Menu DockPanel.Dock="Top" Background="PeachPuff">
-            <ToolBarTray DockPanel.Dock="Top">
-                <ToolBar>
+        <Menu DockPanel.Dock="Top" Background="RosyBrown" Height="28">
+            <ToolBarTray Background="RosyBrown" DockPanel.Dock="Top">
+                <ToolBar Background="RosyBrown">
                     <Button Command="Cut" ToolTip="Cut selection to Windows Clipboard.">
                         <Image Source="icons8-schere-16.png" Height="14" />
                     </Button>
@@ -20,8 +20,8 @@
                     </Button>
                     <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="icons8-paste-50.png" Height="17" Width="39" />
-                            <TextBlock Margin="3,0,0,0">Paste</TextBlock>
+                            <Image Source="icons8-paste-50.png" Height="13" Width="33" />
+                            
                         </StackPanel>
                     </Button>
                 </ToolBar>
@@ -37,8 +37,9 @@
             <ComboBox SelectedValue="{Binding Farbe}"
                   ItemsSource="{Binding Farben}">
             </ComboBox>
+
         </Menu>
-        
+
         <StackPanel Background="{Binding Farbe}">
             <Image Source="muffinsrecipe.png" Height="347" Width="682" ></Image>
             <Button Click="Button_Click" Content="Go back to main menu"  Height="32" Width="152" Background="RosyBrown">
@@ -49,10 +50,10 @@
                 </Button.Resources>
 
             </Button>
-           
+
         </StackPanel>
         <StackPanel Background="{Binding Farbe}">
-            
+
         </StackPanel>
     </DockPanel>
 </Window>

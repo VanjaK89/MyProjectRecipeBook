@@ -120,20 +120,24 @@ namespace MyProjectRecipeBook
         private void CheckBoxChecked(object sender, RoutedEventArgs e)
         { 
             MessageBox.Show("Muffins are ready in 10 minutes!");
-            
+            text4.Background = Brushes.RosyBrown;
 
         }
         private void CheckBoxChecked1(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Vegan tacos  are ready in 15 minutes!");
+            text3.Background = Brushes.RosyBrown;
         }
         private void CheckBoxChecked2(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Pizza Salami  are ready in 30 minutes!");
+            text2.Background =  Brushes.RosyBrown;
         }
         private void CheckBoxChecked3(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Veggie Lasagne are ready in 40 minutes!");
+            text1.Background = Brushes.RosyBrown;
+
         }
     }
 }

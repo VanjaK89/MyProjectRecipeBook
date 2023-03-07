@@ -47,6 +47,22 @@ namespace MyProjectRecipeBook.ViewModels
             }
             
         }
+
+        private string _Statusanzeige;
+
+        public string Statusanzeige
+        {
+            get
+            {
+                if (IngridientsList.Count == 0)
+                {
+                    return "There were no ingridients found in the list!";
+                }
+
+                return $"There are {IngridientsList.Count} Ingridients";
+            }
+
+        }
         public void AddIngridient()
         {
             //Clone -- Tiefe Kopie
@@ -78,13 +94,14 @@ namespace MyProjectRecipeBook.ViewModels
         internal void FilterIngridients()
         {
             IngridientsList = new ObservableCollection<Ingridients>();
-            foreach (Ingridients produkt in
-                _ctx.IngridientsList.Where(p => p.Bezeichnung.Contains(SuchText)))
+            foreach (Ingridients ingridient in
+                _ctx.IngridientsList.Where(p=>p.Bezeichnung.Contains(SuchText)))
             {
-                IngridientsList.Add(produkt);
+                IngridientsList.Add(ingridient);
             }
-            RaisePropertyChanged("Ingridients");
-            
+            RaisePropertyChanged("IngridientsList");
+            RaisePropertyChanged("Statusanzeige");
+
         }
     }
 }

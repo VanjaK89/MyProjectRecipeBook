@@ -48,16 +48,27 @@
                             </UniformGrid>
                         </StackPanel>
                     </MenuItem>
-                    <TextBox Text="{Binding Deleteid}"></TextBox>
+
                     <MenuItem Background="PeachPuff" Header="Delete ingridient from the list" Click="MenuItemDelete_Click">
-                        
                     </MenuItem>
                     <MenuItem Background="PeachPuff" Header="Search for ingridient">
-                        <TextBox Text="{Binding SuchText}"/>
+                        <TextBox Width="30" Height="20" Text="{Binding SuchText}"/>
                         <Button Click="ButtonSuchen_Click">Search</Button>
                         <StatusBar DockPanel.Dock="Bottom">
                             <StatusBarItem Content="{Binding AusgewaehltesIngridient.Bezeichnung}"/>
+                            <StatusBarItem Content="{Binding Statusanzeige}"/>
                         </StatusBar>
+                        <ListBox Background="PeachPuff" ItemsSource="{Binding IngridientsList}"
+                                SelectedItem="{Binding AusgewaehltesIngridient}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBox Text="{Binding Bezeichnung}"/>
+                                        <TextBox Text="{Binding Amount}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
                     </MenuItem>
                 </MenuItem>
                 <MenuItem Background="PeachPuff" >
@@ -98,7 +109,7 @@
                                 </TransformGroup>
                             </Image.RenderTransform>
                         </Image>
-                        <TextBox Background="Beige" Width="150" HorizontalAlignment="Left">Preparation Time: 45 min</TextBox>
+                        <TextBox  Background="{Binding Farbe1}" x:Name="text1" Text="Preparation Time: 40 min"  Width="150" HorizontalAlignment="Left"></TextBox>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Right" >
                         <TextBox Background="Beige">Ingridients:</TextBox>
@@ -140,7 +151,7 @@
                                 </TransformGroup>
                             </Image.RenderTransform>
                         </Image>
-                        <TextBox  Background="Beige" Width="150" HorizontalAlignment="Left">Preparation Time: 15 min</TextBox>
+                        <TextBox x:Name="text3" Background="Beige" Width="150" HorizontalAlignment="Left">Preparation Time: 15 min</TextBox>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Right" >
                         <TextBox Background="Beige">Ingridients:</TextBox>
@@ -180,7 +191,7 @@
                                 </TransformGroup>
                             </Image.RenderTransform>
                         </Image>
-                        <Button Background="Beige" Width="150" HorizontalAlignment="Left">Preparation Time: 30min</Button>
+                        <Button x:Name="text2" Content="Preparation Time: 30min"  Width="150" HorizontalAlignment="Left"></Button>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Right" >
                         <TextBox Background="Beige">Ingridients:</TextBox>
@@ -220,7 +231,7 @@
                                 </TransformGroup>
                             </Image.RenderTransform>
                         </Image>
-                        <TextBox x:Name="onefive" Background="Beige" Width="150" HorizontalAlignment="Left">Preparation Time: 10min</TextBox>
+                        <TextBox x:Name="text4" Background="Beige" Width="150" HorizontalAlignment="Left">Preparation Time: 10min</TextBox>
 
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Right" >
