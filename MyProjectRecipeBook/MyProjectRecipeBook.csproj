@@ -68,6 +68,8 @@
     <Compile Include="MuffinWindow.xaml.cs">
       <DependentUpon>MuffinWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyDataContext.cs" />
+    <Compile Include="MyDataContextClass.cs" />
     <Compile Include="PizzaWindow.xaml.cs">
       <DependentUpon>PizzaWindow.xaml</DependentUpon>
     </Compile>
@@ -167,7 +169,11 @@
     <Resource Include="muffinsrecipe.png" />
     <Resource Include="pizzarecipe.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="icons8-dokumente-48.png" />
+    <Resource Include="icons8-paste-50.png" />
+    <Resource Include="icons8-schere-16.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

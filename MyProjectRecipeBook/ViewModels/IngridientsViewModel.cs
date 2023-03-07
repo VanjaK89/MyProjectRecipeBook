@@ -63,6 +63,28 @@ namespace MyProjectRecipeBook.ViewModels
             _ctx.SaveChanges();
             //zur ObservableCollection hinzufügen
             IngridientsList.Add(ingridientNeu);
-           }       
+           }
+        internal void DeleteProdukt()
+        {
+            var pDelete = _ctx.IngridientsList.Find(AusgewaehltesIngridient.IngridientId);
+
+            _ctx.IngridientsList.Remove(pDelete);
+            _ctx.SaveChanges();
+            //zur ObservableCollection hinzufügen
+            IngridientsList.Remove(AusgewaehltesIngridient);
+            
+        }
+        public string SuchText { get; set; }
+        internal void FilterIngridients()
+        {
+            IngridientsList = new ObservableCollection<Ingridients>();
+            foreach (Ingridients produkt in
+                _ctx.IngridientsList.Where(p => p.Bezeichnung.Contains(SuchText)))
+            {
+                IngridientsList.Add(produkt);
+            }
+            RaisePropertyChanged("Ingridients");
+            
+        }
     }
 }

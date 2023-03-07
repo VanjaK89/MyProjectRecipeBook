@@ -22,6 +22,16 @@ namespace MyProjectRecipeBook
         public MuffinWindow()
         {
             InitializeComponent();
+            var ctx = new MyDataContextClass();
+            ctx.Farben = new System.Collections.ObjectModel.ObservableCollection<string>
+            {
+                "PeachPuff",
+                "RosyBrown",
+                "Beige",
+                "LightGrey"
+            };
+            ctx.Farbe = "Beige";
+            this.DataContext = ctx;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {

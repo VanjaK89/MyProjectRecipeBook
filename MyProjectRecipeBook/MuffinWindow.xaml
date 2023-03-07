@@ -6,12 +6,41 @@
         xmlns:local="clr-namespace:MyProjectRecipeBook"
         mc:Ignorable="d"
         Title="MuffinWindow" Height="450" Width="800">
+  
     <DockPanel>
-        <Menu HorizontalAlignment="Center">
 
+        <Menu DockPanel.Dock="Top" Background="PeachPuff">
+            <ToolBarTray DockPanel.Dock="Top">
+                <ToolBar>
+                    <Button Command="Cut" ToolTip="Cut selection to Windows Clipboard.">
+                        <Image Source="icons8-schere-16.png" Height="14" />
+                    </Button>
+                    <Button Command="Copy" ToolTip="Copy selection to Windows Clipboard.">
+                        <Image Source="icons8-dokumente-48.png" Height="20" Width="35" />
+                    </Button>
+                    <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="icons8-paste-50.png" Height="17" Width="39" />
+                            <TextBlock Margin="3,0,0,0">Paste</TextBlock>
+                        </StackPanel>
+                    </Button>
+                </ToolBar>
+            </ToolBarTray>
+            <TextBox AcceptsReturn="True" />
+            <Button Background="{Binding Farbe}" FontFamily="Arial" FontWeight="Bold" >Change background color
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <ComboBox SelectedValue="{Binding Farbe}"
+                  ItemsSource="{Binding Farben}">
+            </ComboBox>
         </Menu>
-        <StackPanel Background="Beige">
-            <Image Source="muffinsrecipe.png" Height="375" Width="682" ></Image>
+        
+        <StackPanel Background="{Binding Farbe}">
+            <Image Source="muffinsrecipe.png" Height="347" Width="682" ></Image>
             <Button Click="Button_Click" Content="Go back to main menu"  Height="32" Width="152" Background="RosyBrown">
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -20,6 +49,10 @@
                 </Button.Resources>
 
             </Button>
+           
+        </StackPanel>
+        <StackPanel Background="{Binding Farbe}">
+            
         </StackPanel>
     </DockPanel>
 </Window>

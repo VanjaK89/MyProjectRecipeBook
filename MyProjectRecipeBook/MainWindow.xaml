@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:MyProjectRecipeBook"
         mc:Ignorable="d"
         Title="The Book of Recipes"  Height="450" Width="800" WindowStartupLocation="CenterScreen">
+   
     <DockPanel Background="Beige">
         <StackPanel DockPanel.Dock="Top">
+            
             <Menu DockPanel.Dock="Left" Background="RosyBrown">
                 <MenuItem Header="Recipes" Background="PeachPuff">
                     <MenuItem.Icon>
@@ -24,9 +26,9 @@
                     <MenuItem.Icon>
                         <Image Source="cart.png"></Image>
                     </MenuItem.Icon>
-                    <MenuItem Header="Add a new shopping list">
+                    <MenuItem Background="PeachPuff" Header="Add a ingridients to shopping list">
                        
-                        <ListBox ItemsSource="{Binding IngridientsList}"
+                        <ListBox Background="PeachPuff" ItemsSource="{Binding IngridientsList}"
                                 SelectedItem="{Binding AusgewaehltesIngridient}">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
@@ -37,14 +39,25 @@
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
-                        <StackPanel>
+                        <StackPanel Background="PeachPuff">
                             <UniformGrid Columns="3" Rows="1">
                                 <TextBox Text="{Binding NeuesIngridient.Bezeichnung}"/>
                                 <TextBox Text="{Binding NeuesIngridient.Amount}"/>
 
-                                <Button Click="Button_Click_Add">Add Ingridients</Button>
+                                <Button Background="PeachPuff" Click="Button_Click_Add">Add Ingridients</Button>
                             </UniformGrid>
                         </StackPanel>
+                    </MenuItem>
+                    <TextBox Text="{Binding Deleteid}"></TextBox>
+                    <MenuItem Background="PeachPuff" Header="Delete ingridient from the list" Click="MenuItemDelete_Click">
+                        
+                    </MenuItem>
+                    <MenuItem Background="PeachPuff" Header="Search for ingridient">
+                        <TextBox Text="{Binding SuchText}"/>
+                        <Button Click="ButtonSuchen_Click">Search</Button>
+                        <StatusBar DockPanel.Dock="Bottom">
+                            <StatusBarItem Content="{Binding AusgewaehltesIngridient.Bezeichnung}"/>
+                        </StatusBar>
                     </MenuItem>
                 </MenuItem>
                 <MenuItem Background="PeachPuff" >
@@ -52,11 +65,11 @@
                         <Image Source="watch.png"></Image>
                     </MenuItem.Icon>
                     <Expander Header="Preparation Time " Background="PeachPuff">
-                        <StackPanel >
+                        <StackPanel x:Name="ComboCollection" >
                             <CheckBox Name="box1" Content="10" Checked="CheckBoxChecked"></CheckBox>
-                            <CheckBox Name="box2" Content="20" ></CheckBox>
-                            <CheckBox Name="box3" Content="30" ></CheckBox>
-                            <CheckBox Name="box4" Content="45" ></CheckBox>
+                            <CheckBox Name="box2" Content="15" Checked="CheckBoxChecked1"></CheckBox>
+                            <CheckBox Name="box3" Content="30" Checked="CheckBoxChecked2"></CheckBox>
+                            <CheckBox Name="box4" Content="45" Checked="CheckBoxChecked3"></CheckBox>
                         </StackPanel>
                     </Expander>
                 </MenuItem>
@@ -85,11 +98,11 @@
                                 </TransformGroup>
                             </Image.RenderTransform>
                         </Image>
-                        <TextBox Background="Beige" Width="150" HorizontalAlignment="Left">Preparation Time: 30 min</TextBox>
+                        <TextBox Background="Beige" Width="150" HorizontalAlignment="Left">Preparation Time: 45 min</TextBox>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Right" >
                         <TextBox Background="Beige">Ingridients:</TextBox>
-                        <RadioButton>Tomato juice</RadioButton>
+                        <RadioButton >Tomato juice</RadioButton>
                         <RadioButton>Zuchinni</RadioButton>
                         <RadioButton>Cheese</RadioButton>
                         <RadioButton>Potatoes</RadioButton>
@@ -167,7 +180,7 @@
                                 </TransformGroup>
                             </Image.RenderTransform>
                         </Image>
-                        <Button Background="Beige" Width="150" HorizontalAlignment="Left">Preparation Time: 20min</Button>
+                        <Button Background="Beige" Width="150" HorizontalAlignment="Left">Preparation Time: 30min</Button>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Right" >
                         <TextBox Background="Beige">Ingridients:</TextBox>

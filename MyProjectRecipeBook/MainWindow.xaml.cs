@@ -26,7 +26,7 @@ namespace MyProjectRecipeBook
         public MainWindow()
         {
             InitializeComponent();
-            
+
             IngridientsViewModel vm = new IngridientsViewModel();
             vm.NeuesIngridient = new Models.Ingridients()
             {
@@ -43,8 +43,17 @@ namespace MyProjectRecipeBook
         }
 
 
+        private void MenuItemDelete_Click(object sender, RoutedEventArgs e)
+        {
+            IngridientsViewModel vm = this.DataContext as IngridientsViewModel;
+            vm.DeleteProdukt();
+        }
+        private void ButtonSuchen_Click(object sender, RoutedEventArgs e)
+        {
+            IngridientsViewModel vm = this.DataContext as IngridientsViewModel;
+            vm.FilterIngridients();
 
-
+        }
         private void MenuItem_Vegan_Click(object sender, RoutedEventArgs e)
         {
             mainBox1.Background = Brushes.RosyBrown;
@@ -106,10 +115,25 @@ namespace MyProjectRecipeBook
 
             muffinWindow.Show();
         }
-
+        
+        
         private void CheckBoxChecked(object sender, RoutedEventArgs e)
         { 
             MessageBox.Show("Muffins are ready in 10 minutes!");
+            
+
+        }
+        private void CheckBoxChecked1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Vegan tacos  are ready in 15 minutes!");
+        }
+        private void CheckBoxChecked2(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Pizza Salami  are ready in 30 minutes!");
+        }
+        private void CheckBoxChecked3(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Veggie Lasagne are ready in 40 minutes!");
         }
     }
 }
