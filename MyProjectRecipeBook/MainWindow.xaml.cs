@@ -104,8 +104,11 @@ namespace MyProjectRecipeBook
         {
             VeganWindow veganWindow = new VeganWindow();
             this.Visibility = Visibility.Hidden;
-
             veganWindow.Show();
+            IngridientsViewModel vm = this.DataContext as IngridientsViewModel;
+            veganWindow.DataContext = vm;
+            
+
         }
         private void startCooking2(object sender, RoutedEventArgs e)
         {
@@ -113,7 +116,7 @@ namespace MyProjectRecipeBook
             this.Visibility = Visibility.Hidden;
             pizzaWindow.Show();
 
-           
+
         }
         private void startCooking3(object sender, RoutedEventArgs e)
         {
@@ -122,10 +125,10 @@ namespace MyProjectRecipeBook
 
             muffinWindow.Show();
         }
-        
-        
+
+
         private void CheckBoxChecked(object sender, RoutedEventArgs e)
-        { 
+        {
             MessageBox.Show("Muffins are ready in 10 minutes!");
             text4.Background = Brushes.RosyBrown;
 
@@ -138,16 +141,16 @@ namespace MyProjectRecipeBook
         private void CheckBoxChecked2(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Pizza Salami  are ready in 30 minutes!");
-            text2.Background =  Brushes.RosyBrown;
+            text2.Background = Brushes.RosyBrown;
         }
         private void CheckBoxChecked3(object sender, RoutedEventArgs e)
         {
-            
+
             MessageBox.Show("Veggie Lasagne are ready in 40 minutes!");
             text1.Background = Brushes.RosyBrown;
 
         }
 
-      
+       
     }
 }

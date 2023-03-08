@@ -31,10 +31,12 @@ namespace MyProjectRecipeBook
             this.Visibility = Visibility.Hidden;
             main.Show();
         }
-        private void ButtonNeuesProdukt_Click(object sender, RoutedEventArgs e)
+        private void AddFromVeganWindow(object sender, RoutedEventArgs e)
         {
             IngridientsViewModel vm = this.DataContext as IngridientsViewModel;
-            vm.AddIngridients();
-            this.Close();
+            vm.AddIngridient();
+            MessageBox.Show("Added ingridient");
+
         }
+    }
 }

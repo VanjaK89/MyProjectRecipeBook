@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="VeganWindow" Height="450" Width="800">
     <DockPanel Background="Beige">
-        <Menu HorizontalAlignment="Center">
-			<StackPanel>
+        <Menu Background="Beige" DockPanel.Dock="Top">
+			<StackPanel >
 				<UniformGrid Columns="3" Rows="1">
 					<TextBox Text="{Binding NeuesIngridient.Bezeichnung}"/>
 					<TextBox Text="{Binding NeuesIngridient.Amount}"/>
-					<Button Click="Add_with_button_from_vegan_window">Add a new Ingridient</Button>
+					<Button Background="RosyBrown" Click="AddFromVeganWindow">Add a new Ingridient</Button>
 				</UniformGrid>
 			</StackPanel>
         </Menu>

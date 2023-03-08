@@ -163,7 +163,8 @@
                         <RadioButton>Corn</RadioButton>
                         <RadioButton>Tortilla</RadioButton>
                         <RadioButton>Soya nuggets</RadioButton>
-                        <Button x:Name="button1" Content="Start Cooking" Click="startCooking1" Background="RosyBrown">
+                        <Button x:Name="button1" Content="Start Cooking" Click="startCooking1" Background="RosyBrown" >
+                            
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="10"></Setter>
