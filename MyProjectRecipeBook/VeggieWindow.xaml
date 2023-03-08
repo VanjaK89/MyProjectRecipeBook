@@ -57,14 +57,52 @@
                     </TextBlock>
                 </Label>
             </GroupBox>
-            <Button Click="Button_Click" Content="Go back to main menu"  Height="32" Width="152" Background="RosyBrown">
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="10"></Setter>
-                    </Style>
-                </Button.Resources>
+            <StackPanel VerticalAlignment="Center">
+                <Button Click="Button_Click" Content="Go back to main menu"  Height="32" Width="152" Background="RosyBrown">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"></Setter>
+                        </Style>
+                    </Button.Resources>
 
-            </Button>
+                </Button>
+
+                <StackPanel>
+                    <Grid Background="Beige" Height="97" Width="191" RenderTransformOrigin="0.292,0.433">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="101*"/>
+                            <ColumnDefinition Width="109*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock x:Name="clocktxtblock" FontSize="20"  Margin="80,70,10,0" Height="27" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                        <Button x:Name="startbtn"  Background="RosyBrown" Content="Start" FontSize="10" Click="startbtn_Click" Margin="0,28,67,0" Height="24" VerticalAlignment="Top" >
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="10"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button x:Name="stopbtn"  Background="RosyBrown" Content="Stop" FontSize="10" Click="stopbtn_Click" Grid.Column="1" Margin="0,28,74,45" RenderTransformOrigin="-0.51,0.489" >
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="10"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button x:Name="resetbtn"  Background="RosyBrown" Content="Reset" FontSize="10" Click="resetbtn_Click" Grid.Column="1" Margin="77,28,-9,45" RenderTransformOrigin="0.407,-0.455" >
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="10"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <ListBox x:Name="elapsedtimeitem" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="433" Margin="56,199,0,0" Grid.ColumnSpan="2"/>
+                    </Grid>
+                </StackPanel>
+
+            </StackPanel>
+
+
         </UniformGrid>
 
     </DockPanel>

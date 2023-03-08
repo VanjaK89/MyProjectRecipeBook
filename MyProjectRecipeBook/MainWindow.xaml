@@ -50,6 +50,7 @@
                     </MenuItem>
                     
                     <MenuItem Background="PeachPuff" Header="Delete ingridient from the list" Click="MenuItemDelete_Click">
+                        
                     </MenuItem>
                     <MenuItem Background="PeachPuff" Header="Search for ingridient">
                         <TextBox Width="30" Height="20" Text="{Binding SuchText}"/>
@@ -194,7 +195,7 @@
                                 </TransformGroup>
                             </Image.RenderTransform>
                         </Image>
-                        <Button x:Name="text2" Content="Preparation Time: 30min"  Width="150" HorizontalAlignment="Left"></Button>
+                        <TextBox Background="Beige" x:Name="text2" Text="Preparation Time: 30min"  Width="150" HorizontalAlignment="Left"></TextBox>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Right" >
                         <TextBox Background="Beige">Ingridients:</TextBox>
