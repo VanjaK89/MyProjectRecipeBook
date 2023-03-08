@@ -54,6 +54,7 @@ namespace MyProjectRecipeBook
         {
             IngridientsViewModel vm = this.DataContext as IngridientsViewModel;
             vm.DeleteProdukt( vm.DeleteId);
+            MessageBox.Show("Deleted ingridient");
         }
         private void ButtonSuchen_Click(object sender, RoutedEventArgs e)
         {
