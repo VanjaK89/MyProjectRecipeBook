@@ -45,13 +45,17 @@
                                 <TextBox Text="{Binding NeuesIngridient.Amount}"/>
 
                                 <Button Background="PeachPuff" Click="Button_Click_Add">Add Ingridients</Button>
+                                
                             </UniformGrid>
                         </StackPanel>
-                    </MenuItem>
-                    
-                    <MenuItem Background="PeachPuff" Header="Delete ingridient from the list" Click="MenuItemDelete_Click">
                         
                     </MenuItem>
+                    <MenuItem Background="PeachPuff" Header="Delete ingridient from the list" >
+                        <TextBox Text="{Binding DeleteId}"></TextBox>
+                        <Button Click="MenuItemDelete_Click" Content="Delete"></Button>
+
+                    </MenuItem>
+
                     <MenuItem Background="PeachPuff" Header="Search for ingridient">
                         <TextBox Width="30" Height="20" Text="{Binding SuchText}"/>
                         <Button Click="ButtonSuchen_Click">Search</Button>

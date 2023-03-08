@@ -53,7 +53,7 @@ namespace MyProjectRecipeBook
         private void MenuItemDelete_Click(object sender, RoutedEventArgs e)
         {
             IngridientsViewModel vm = this.DataContext as IngridientsViewModel;
-            vm.DeleteProdukt();
+            vm.DeleteProdukt( vm.DeleteId);
         }
         private void ButtonSuchen_Click(object sender, RoutedEventArgs e)
         {
