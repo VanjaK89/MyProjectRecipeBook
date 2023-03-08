@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyProjectRecipeBook.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,5 +31,10 @@ namespace MyProjectRecipeBook
             this.Visibility = Visibility.Hidden;
             main.Show();
         }
-    }
+        private void ButtonNeuesProdukt_Click(object sender, RoutedEventArgs e)
+        {
+            IngridientsViewModel vm = this.DataContext as IngridientsViewModel;
+            vm.AddIngridients();
+            this.Close();
+        }
 }

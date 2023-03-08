@@ -12,7 +12,14 @@ namespace MyProjectRecipeBook.Models
 
      {
         [Key]
-        public int Id { get; set; }
+        private int _Id;
+        public int Id 
+        { 
+            get { return _Id;  }
+            set { _Id = value;
+                RaisePropertyChange("Id");
+            }
+        }
         private int _IngridientId;
         public int IngridientId
         {

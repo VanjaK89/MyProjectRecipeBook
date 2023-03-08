@@ -142,6 +142,7 @@ namespace MyProjectRecipeBook
         }
         private void CheckBoxChecked3(object sender, RoutedEventArgs e)
         {
+            
             MessageBox.Show("Veggie Lasagne are ready in 40 minutes!");
             text1.Background = Brushes.RosyBrown;
 
