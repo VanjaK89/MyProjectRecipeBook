@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace MyProjectRecipeBook
+
 {
     /// <summary>
     /// Interaction logic for VeggieWindow.xaml
@@ -30,6 +31,17 @@ namespace MyProjectRecipeBook
             this.Visibility = Visibility.Hidden;
             main.Show();
 
+        }
+        private void CommonCommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private void Button_Click_New_Window(object sender, RoutedEventArgs e)
+        {
+            NewWindow newWindow = new NewWindow();
+            this.Visibility = Visibility.Hidden;
+            newWindow.Show();
         }
     }
 }

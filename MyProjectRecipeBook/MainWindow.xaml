@@ -48,7 +48,7 @@
                             </UniformGrid>
                         </StackPanel>
                     </MenuItem>
-
+                    
                     <MenuItem Background="PeachPuff" Header="Delete ingridient from the list" Click="MenuItemDelete_Click">
                     </MenuItem>
                     <MenuItem Background="PeachPuff" Header="Search for ingridient">
@@ -71,7 +71,7 @@
                         </ListBox>
                     </MenuItem>
                 </MenuItem>
-                <MenuItem Background="PeachPuff" >
+                <MenuItem Background="PeachPuff" Width="25" >
                     <MenuItem.Icon >
                         <Image Source="watch.png"></Image>
                     </MenuItem.Icon>
@@ -84,6 +84,9 @@
                         </StackPanel>
                     </Expander>
                 </MenuItem>
+                
+                 <TextBlock  Background="PeachPuff" Name="dateText" Width="103"></TextBlock>
+                
             </Menu>
         </StackPanel>
 
@@ -212,7 +215,7 @@
             </GroupBox>
             <GroupBox x:Name="mainBox3" Header="Deserts" BorderBrush="RosyBrown" BorderThickness="3">
                 <Grid>
-                    <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Vertical" Margin="0,0,0,10">
 
                         <Button x:Name="backgroundButton3"  Content="Muffins" BorderBrush="RosyBrown" Height="23" Margin="0,0,284.8,0" Background="MistyRose"  >
                             <Button.Resources>
@@ -252,6 +255,8 @@
                 </Grid>
             </GroupBox>
         </UniformGrid>
-        <StatusBar DockPanel.Dock="Bottom">Heute ist Donnerstag</StatusBar>
+        
+     
+        
     </DockPanel>
 </Window>

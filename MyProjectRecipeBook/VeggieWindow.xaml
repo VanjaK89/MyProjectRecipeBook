@@ -6,12 +6,57 @@
         xmlns:local="clr-namespace:MyProjectRecipeBook"
         mc:Ignorable="d"
         Title="VeggieWindow" Height="450" Width="800">
-    <DockPanel>
+    <Window.CommandBindings>
+        <CommandBinding Command="New" CanExecute="CommonCommandBinding_CanExecute" />
+        <CommandBinding Command="Open" CanExecute="CommonCommandBinding_CanExecute" />
+        <CommandBinding Command="Save" CanExecute="CommonCommandBinding_CanExecute" />
+    </Window.CommandBindings>
+    <DockPanel  Background="Beige">
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button Command="New" Content="New" Click="Button_Click_New_Window"/>
+                <Button Command="Open" Content="Open" />
+                <Button Command="Save" Content="Save" />
+            </ToolBar>
+            <ToolBar>
+                <Button Command="Cut" Content="Cut" />
+                <Button Command="Copy" Content="Copy" />
+                <Button Command="Paste" Content="Paste" />
+            </ToolBar>
+        </ToolBarTray>
+        <TextBox AcceptsReturn="True" />
         <Menu HorizontalAlignment="Center">
 
         </Menu>
-        <StackPanel Background="Beige">
-            <Image Source="veggierecipe.png" Height="368" Width="424" ></Image>
+        <UniformGrid HorizontalAlignment="Center">
+            <GroupBox Header="Step 1" BorderBrush="RosyBrown" BorderThickness="3">
+                <Label VerticalContentAlignment="Center">
+                    <TextBlock TextWrapping="WrapWithOverflow" Height="130">
+                     Heat oven to 200C/180C fan/gas 6. Line 2 muffin trays with paper muffin cases. 
+                        In a large bowl beat 2 medium eggs lightly with a handheld electric mixer for 1 min.
+                        Add 125ml vegetable oil and 250ml semi-skimmed milk and beat until just combined
+                        then add 250g golden caster sugar and whisk until you have a smooth batter.
+                    </TextBlock>
+                </Label>
+            </GroupBox>
+            <GroupBox Header="Step 2" BorderBrush="RosyBrown" BorderThickness="3">
+                <Label VerticalContentAlignment="Center">
+                    <TextBlock TextWrapping="WrapWithOverflow" Height="130">
+                     Sift in 400g self-raising flour and 1 tsp salt (or 400g plain flour and 3 tsp baking powder if using) then mix until just smooth. Be careful not to over-mix the batter as this will make the muffins tough.
+                        Fill muffin cases two-thirds full and bake for 20-25 mins, until risen, firm to the touch and a skewer inserted in the middle comes out clean. If the trays will not fit on 1 shelf, swap the shelves around after 15 mins of cooking.
+                    </TextBlock>
+                </Label>
+            </GroupBox>
+            <GroupBox Header="Step 3" BorderBrush="RosyBrown" BorderThickness="3">
+                <Label VerticalContentAlignment="Center">
+                    <TextBlock TextWrapping="WrapWithOverflow" Height="130">
+                     Heat oven to 200C/180C fan/gas 6. Line 2 muffin trays with paper muffin cases. 
+                        In a large bowl beat 2 medium eggs lightly with a handheld electric mixer for 1 min.
+                        Add 125ml vegetable oil and 250ml semi-skimmed milk and beat until just combined
+                        then add 250g golden caster sugar and whisk until you have a smooth batter.
+                    </TextBlock>
+                </Label>
+            </GroupBox>
             <Button Click="Button_Click" Content="Go back to main menu"  Height="32" Width="152" Background="RosyBrown">
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -20,7 +65,7 @@
                 </Button.Resources>
 
             </Button>
-        </StackPanel>
+        </UniformGrid>
 
     </DockPanel>
 </Window>

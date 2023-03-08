@@ -7,27 +7,31 @@
         mc:Ignorable="d"
         Title="MuffinWindow" Height="450" Width="800">
 
-    <DockPanel>
+    <DockPanel Background="{Binding Farbe}">
 
         <Menu DockPanel.Dock="Top" Background="RosyBrown" Height="28">
-            <ToolBarTray Background="RosyBrown" DockPanel.Dock="Top">
-                <ToolBar Background="RosyBrown">
-                    <Button Command="Cut" ToolTip="Cut selection to Windows Clipboard.">
-                        <Image Source="icons8-schere-16.png" Height="14" />
-                    </Button>
-                    <Button Command="Copy" ToolTip="Copy selection to Windows Clipboard.">
-                        <Image Source="icons8-dokumente-48.png" Height="20" Width="35" />
-                    </Button>
-                    <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="icons8-paste-50.png" Height="13" Width="33" />
-                            
-                        </StackPanel>
-                    </Button>
-                </ToolBar>
-            </ToolBarTray>
-            <TextBox AcceptsReturn="True" />
-            <Button Background="{Binding Farbe}" FontFamily="Arial" FontWeight="Bold" >Change background color
+            <TextBox Background="Beige" Text="Right-click here for context menu!">
+                <TextBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Command="Cut">
+                            <MenuItem.Icon>
+                                <Image Source="icons8-schere-16.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Command="Copy">
+                            <MenuItem.Icon>
+                                <Image Source="icons8-dokumente-48.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Command="Paste">
+                            <MenuItem.Icon>
+                                <Image Source="icons8-paste-50.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </ContextMenu>
+                </TextBox.ContextMenu>
+            </TextBox>
+            <Button Background="{Binding Farbe}" FontFamily="Arial" >Change background color
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="10"></Setter>
@@ -39,9 +43,35 @@
             </ComboBox>
 
         </Menu>
-
-        <StackPanel Background="{Binding Farbe}">
-            <Image Source="muffinsrecipe.png" Height="347" Width="682" ></Image>
+        <UniformGrid HorizontalAlignment="Center">
+                <GroupBox Header="Step 1" BorderBrush="RosyBrown" BorderThickness="3">
+                <Label VerticalContentAlignment="Center">
+                    <TextBlock TextWrapping="WrapWithOverflow" Height="130">
+                     Heat oven to 200C/180C fan/gas 6. Line 2 muffin trays with paper muffin cases. 
+                        In a large bowl beat 2 medium eggs lightly with a handheld electric mixer for 1 min.
+                        Add 125ml vegetable oil and 250ml semi-skimmed milk and beat until just combined
+                        then add 250g golden caster sugar and whisk until you have a smooth batter.
+                    </TextBlock>
+                </Label>
+            </GroupBox>
+                <GroupBox Header="Step 2" BorderBrush="RosyBrown" BorderThickness="3">
+                    <Label VerticalContentAlignment="Center">
+                    <TextBlock TextWrapping="WrapWithOverflow" Height="130">
+                     Sift in 400g self-raising flour and 1 tsp salt (or 400g plain flour and 3 tsp baking powder if using) then mix until just smooth. Be careful not to over-mix the batter as this will make the muffins tough.
+                        Fill muffin cases two-thirds full and bake for 20-25 mins, until risen, firm to the touch and a skewer inserted in the middle comes out clean. If the trays will not fit on 1 shelf, swap the shelves around after 15 mins of cooking.
+                    </TextBlock>
+                    </Label> 
+                </GroupBox>
+                <GroupBox Header="Step 3" BorderBrush="RosyBrown" BorderThickness="3">
+                <Label VerticalContentAlignment="Center">
+                    <TextBlock TextWrapping="WrapWithOverflow" Height="130">
+                     Heat oven to 200C/180C fan/gas 6. Line 2 muffin trays with paper muffin cases. 
+                        In a large bowl beat 2 medium eggs lightly with a handheld electric mixer for 1 min.
+                        Add 125ml vegetable oil and 250ml semi-skimmed milk and beat until just combined
+                        then add 250g golden caster sugar and whisk until you have a smooth batter.
+                    </TextBlock>
+                </Label>
+            </GroupBox>
             <Button Click="Button_Click" Content="Go back to main menu"  Height="32" Width="152" Background="RosyBrown">
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -50,10 +80,10 @@
                 </Button.Resources>
 
             </Button>
+        </UniformGrid>
+           
 
-        </StackPanel>
-        <StackPanel Background="{Binding Farbe}">
-
-        </StackPanel>
+        
+       
     </DockPanel>
 </Window>

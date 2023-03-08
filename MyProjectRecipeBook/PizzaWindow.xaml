@@ -7,11 +7,53 @@
         mc:Ignorable="d"
         Title="PizzaWindow" Height="450" Width="800">
     <DockPanel>
-        <Menu HorizontalAlignment="Center">
-
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" />
+                <MenuItem Header="_Open" />
+                <MenuItem Header="_Save" />
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="_Manage users">
+                    <MenuItem.Icon>
+                        <Image Source="icons8-user-16.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Show groups" IsCheckable="True" IsChecked="True" />
+            </MenuItem>
         </Menu>
-        <StackPanel Background="Beige">
-            <Image Source="pizzarecipe.png" Height="375" Width="682" ></Image>
+        <TextBox AcceptsReturn="True" />
+        <UniformGrid HorizontalAlignment="Center">
+            <GroupBox Header="Step 1" BorderBrush="RosyBrown" BorderThickness="3">
+                <Label VerticalContentAlignment="Center">
+                    <TextBlock TextWrapping="WrapWithOverflow" Height="130">
+                     Heat oven to 200C/180C fan/gas 6. Line 2 muffin trays with paper muffin cases. 
+                        In a large bowl beat 2 medium eggs lightly with a handheld electric mixer for 1 min.
+                        Add 125ml vegetable oil and 250ml semi-skimmed milk and beat until just combined
+                        then add 250g golden caster sugar and whisk until you have a smooth batter.
+                    </TextBlock>
+                </Label>
+            </GroupBox>
+            <GroupBox Header="Step 2" BorderBrush="RosyBrown" BorderThickness="3">
+                <Label VerticalContentAlignment="Center">
+                    <TextBlock TextWrapping="WrapWithOverflow" Height="130">
+                     Sift in 400g self-raising flour and 1 tsp salt (or 400g plain flour and 3 tsp baking powder if using) then mix until just smooth. Be careful not to over-mix the batter as this will make the muffins tough.
+                        Fill muffin cases two-thirds full and bake for 20-25 mins, until risen, firm to the touch and a skewer inserted in the middle comes out clean. If the trays will not fit on 1 shelf, swap the shelves around after 15 mins of cooking.
+                    </TextBlock>
+                </Label>
+            </GroupBox>
+            <GroupBox Header="Step 3" BorderBrush="RosyBrown" BorderThickness="3">
+                <Label VerticalContentAlignment="Center">
+                    <TextBlock TextWrapping="WrapWithOverflow" Height="130">
+                     Heat oven to 200C/180C fan/gas 6. Line 2 muffin trays with paper muffin cases. 
+                        In a large bowl beat 2 medium eggs lightly with a handheld electric mixer for 1 min.
+                        Add 125ml vegetable oil and 250ml semi-skimmed milk and beat until just combined
+                        then add 250g golden caster sugar and whisk until you have a smooth batter.
+                    </TextBlock>
+                </Label>
+            </GroupBox>
             <Button Click="Button_Click" Content="Go back to main menu"  Height="32" Width="152" Background="RosyBrown">
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -20,6 +62,6 @@
                 </Button.Resources>
 
             </Button>
-        </StackPanel>
+        </UniformGrid>
     </DockPanel>
 </Window>

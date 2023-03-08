@@ -48,7 +48,7 @@ namespace MyProjectRecipeBook.ViewModels
             
         }
 
-        private string _Statusanzeige;
+        //private string _Statusanzeige;
 
         public string Statusanzeige
         {
@@ -82,13 +82,15 @@ namespace MyProjectRecipeBook.ViewModels
            }
         internal void DeleteProdukt()
         {
-            var pDelete = _ctx.IngridientsList.Find(AusgewaehltesIngridient.IngridientId);
+            
+            var pDelete = _ctx.IngridientsList.Find(AusgewaehltesIngridient.Id);
 
             _ctx.IngridientsList.Remove(pDelete);
             _ctx.SaveChanges();
             //zur ObservableCollection hinzufügen
             IngridientsList.Remove(AusgewaehltesIngridient);
-            
+            RaisePropertyChanged("Statusanzeige");
+
         }
         public string SuchText { get; set; }
         internal void FilterIngridients()

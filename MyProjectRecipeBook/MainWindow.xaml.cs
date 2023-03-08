@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace MyProjectRecipeBook
 {
@@ -35,6 +36,12 @@ namespace MyProjectRecipeBook
             };
             vm.FillIngridientsFromDB();
             this.DataContext = vm;
+
+            DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
+            {
+                this.dateText.Text = DateTime.Now.ToString("HH:mm:s d/MM/yy ");
+            }, this.Dispatcher);
+
         }
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
@@ -139,5 +146,7 @@ namespace MyProjectRecipeBook
             text1.Background = Brushes.RosyBrown;
 
         }
+
+      
     }
 }
